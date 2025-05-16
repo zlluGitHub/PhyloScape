@@ -1,23 +1,25 @@
-## 介绍
+# PhyloScape documentation
 
-### PhyloScape是什么
+## Introduction
 
-[PhyloScape](http://www.phyloscape.cc/) 是一款基于 [d3.js](https://d3js.org/) 的用于可视化系统进化树的插件（以下简称“本插件”），支持 tree 、radial 布局、 支持导入导出 `Newick` 、 `NEXUS` 、`NeXML`、`Phyloxml`等格式的树文件，且具备选中分支、编辑子树、添加子树、进化分支优化、树结构转换、字体切换、元数据展示、保存所选枝叶、重置树、将进化树图像导出为 `SVG` 、 `PNG` 等功能。
+### About PhyloScape JS library
 
-### 快速安装
+[PhyloScape](http://www.phyloscape.cc) JS library is based on [d3.js](https://d3js.org) for visualizing Phylogenetic trees. PhyloScape supports tree files in Newick and Nexus formats and exports images in SVG and PNG formats. Additionally, PhyloScape features branch selection, subtree editing, subtree addition, optimization of evolutionary branches, tree structure conversion, font switching, metadata display, saving selected branches and leaves, and resetting the tree.
 
-#### CDN 引入
+### Quick Use
 
-在页面上引入[PhyloScape](http://www.phyloscape.cc/cdn/phyloscape.js)。最新版支持 `CommonJS` 以及基础标签引入形式，对于生产环境，我们推荐链接到一个明确的版本号和构建文件，以避免新版本造成的不可预期的破坏。（建议下载 [PhyloScape](http://www.phyloscape.cc/cdn/phyloscape.js) 在本地引入）
+#### CDN install
+
+The lastest version of PhyloScape library now supports `CommonJS` and introducing with the basic label. We recommend linking to a specific version to prevent unexpected disruption. It is advisable to download PhyloScape for local implementation.
 
 ```html
-<!-- 在线引入PhyloScape -->
-<script src="http://www.phyloscape.cc/cdn/phyloscape.main.js"></script>
+<!-- import PhyloScape online -->
+<script src="http://www.darwintree.cn/PhyloScape/phyloscape.main.js"></script>
 ```
 
-**示例展示**
+Examples
 
-通过 CDN 可以快速使用 [PhyloScape](http://www.phyloscape.cc/cdn/phyloscape.js) 写出一个 `tree` 示例：
+A tree example can be quickly created using PhyloScape via a CDN:
 
 ```html
 <!DOCTYPE html>
@@ -32,10 +34,10 @@
 
 <body>
     <div id="dendrogram"></div>
-    <script src="http://www.phyloscape.cc/cdn/phyloscape.main.js"></script>
+    <script src="http://www.darwintree.cn/PhyloScape/phyloscape.main.js"></script>
     <script>
         new phyloscape.InitTreeStructure("#dendrogram", { content: "" })
-        // 或者
+        // or
         phyloscape.InitTreeLayoutStructure("#dendrogram", {
             content: "",
             layout: "tree"
@@ -46,7 +48,7 @@
 </html>
 ```
 
-通过 CDN 可以快速使用 [PhyloScape](http://www.phyloscape.cc/cdn/phyloscape.js) 写出一个 `radial` 示例：
+A `radial` example can be quickly created using PhyloScape via a CDN:
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -60,10 +62,10 @@
 
 <body>
     <div id="dendrogram"></div>
-    <script src="http://www.phyloscape.cc/cdn/phyloscape.main.js"></script>
+    <script src="http://www.darwintree.cn/PhyloScape/phyloscape.main.js"></script>
     <script>
         new phyloscape.InitRadialStructure("#dendrogram", { content: "" })
-        // 或者
+        // or
         phyloscape.InitTreeLayoutStructure("#dendrogram", {
             content: ""
             layout: "radial"
@@ -74,42 +76,46 @@
 </html>
 ```
 
-#### NPM 安装
+#### NPM install
 
-##### phyloscape
-推荐使用 `npm` 来安装，享受生态圈和工具带来的便利，更好地和 `webpack` 配合使用，当然，我们也推荐使用 `ES2015`。
+use npm
 
-```js
+We recommend installing via npm to enjoy the convenience brought by the ecosystem and tools, and to better integrate with webpack.
+
+example
+
+```javascript
 import phyloscape from "phyloscape";
 
 new phyloscape.InitTreeStructure("#dendrogram", { content: "" })
 
-// 或者
+// or
 new phyloscape.InitRadialStructure("#dendrogram", { content: "" })
 
-// 或者
+// or
 phyloscape.InitTreeLayoutStructure("#dendrogram", {
     content: ""
     layout: "" // radial、tree
 })
 ```
-##### NPM 按需引用
 
-```js
+NPM on-demand import
+```javascript
 import { InitTreeStructure, InitRadialStructure, InitTreeLayoutStructure } from "phyloscape";
 
 new InitTreeStructure("#dendrogram", { content: "" })
 
-// 或者
+// or
 new InitRadialStructure("#dendrogram", { content: "" })
 
-// 或者
+// or
 InitTreeLayoutStructure("#dendrogram", {
     content: ""
     layout: "" // radial、tree
 })
 ```
 
-#### 支持的环境
+#### Supported Environments
 
-`PhyloScape` 支持最新浏览器，比如 `Chrome`，`Edge`，`Firefox` 以及 `Safari`。
+PhyloScape is compatible with the latest versions of all major browsers, including Chrome, Edge, Firefox, and Safari.
+
